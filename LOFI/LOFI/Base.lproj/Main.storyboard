@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LOFI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgh-KH-TQN">
+                                <rect key="frame" x="50" y="100" width="225" height="225"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch_pad_bg" translatesAutoresizingMaskIntoConstraints="NO" id="1sT-MJ-Nwm">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="225"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touch_pad" translatesAutoresizingMaskIntoConstraints="NO" id="l0H-2V-3O7">
+                                        <rect key="frame" x="82.5" y="82.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="14X-hx-fDD"/>
+                                            <constraint firstAttribute="width" secondItem="l0H-2V-3O7" secondAttribute="height" multiplier="1:1" id="pEs-0F-6jk"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1sT-MJ-Nwm" firstAttribute="leading" secondItem="bgh-KH-TQN" secondAttribute="leading" id="3Ot-zZ-FFZ"/>
+                                    <constraint firstItem="l0H-2V-3O7" firstAttribute="centerX" secondItem="bgh-KH-TQN" secondAttribute="centerX" id="BPM-R3-gcg"/>
+                                    <constraint firstAttribute="trailing" secondItem="1sT-MJ-Nwm" secondAttribute="trailing" id="Fy4-A8-O2G"/>
+                                    <constraint firstItem="l0H-2V-3O7" firstAttribute="centerY" secondItem="bgh-KH-TQN" secondAttribute="centerY" id="eBS-qc-q11"/>
+                                    <constraint firstAttribute="width" secondItem="bgh-KH-TQN" secondAttribute="height" multiplier="1:1" id="fZd-s0-CeM"/>
+                                    <constraint firstItem="1sT-MJ-Nwm" firstAttribute="top" secondItem="bgh-KH-TQN" secondAttribute="top" id="iFl-Pu-mWV"/>
+                                    <constraint firstAttribute="bottom" secondItem="1sT-MJ-Nwm" secondAttribute="bottom" id="sBt-xv-uap"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.3529411764705882" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bgh-KH-TQN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Ht6-wu-SMY"/>
+                            <constraint firstItem="bgh-KH-TQN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Zqh-Pm-PsD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bgh-KH-TQN" secondAttribute="bottom" constant="50" id="f5c-cF-7xZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="touchPad" destination="l0H-2V-3O7" id="xNB-dF-9Cj"/>
+                        <outlet property="touchPadCenterX" destination="BPM-R3-gcg" id="8Rd-Rh-n7F"/>
+                        <outlet property="touchPadCenterY" destination="eBS-qc-q11" id="4bD-i4-8CQ"/>
+                        <outlet property="touchPadContainer" destination="bgh-KH-TQN" id="MoA-xT-RmW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.637181409295355" y="16.800000000000001"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="touch_pad" width="124" height="124"/>
+        <image name="touch_pad_bg" width="365" height="366"/>
+    </resources>
+</document>
