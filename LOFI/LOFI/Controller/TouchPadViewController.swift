@@ -1,21 +1,17 @@
 //
-//  ViewController.swift
+//  TouchPadViewController.swift
 //  LOFI
 //
-//  Created by Nguyen Manh Tuan on 10/29/17.
+//  Created by TuanNM on 10/30/17.
 //  Copyright © 2017 Nguyen Manh Tuan. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class TouchPadViewController: UIViewController {
 
-    
     @IBOutlet weak var touchPadContainer: UIView!
     @IBOutlet weak var touchPad: UIImageView!
-    
-    @IBOutlet weak var touchPadCenterY: NSLayoutConstraint!
-    @IBOutlet weak var touchPadCenterX: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +27,9 @@ class ViewController: UIViewController {
         
         if touch.x > 0 && touch.x < maxSize && touch.y > 0 && touch.x < maxSize{
             isMove = true
-
+            
             UIView.animate(withDuration: 0.2, animations: {
-                self.touchPad.transform = CGAffineTransform(scaleX: 1.75, y: 1.75)
+                self.touchPad.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             }) { (done) in
                 
             }
@@ -45,7 +41,7 @@ class ViewController: UIViewController {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let touch = touches.first?.location(in: touchPadContainer) else{return}
-  
+        
         if isMove {
             
             let maxSize = touchPadContainer.frame.width
@@ -79,7 +75,7 @@ class ViewController: UIViewController {
         
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -87,4 +83,3 @@ class ViewController: UIViewController {
 
 
 }
-

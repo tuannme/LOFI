@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		CA08A5B41FA5DC67008A187F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08A5B31FA5DC67008A187F /* AppDelegate.swift */; };
-		CA08A5B61FA5DC67008A187F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08A5B51FA5DC67008A187F /* ViewController.swift */; };
 		CA08A5B91FA5DC67008A187F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5B71FA5DC67008A187F /* Main.storyboard */; };
 		CA08A5BB1FA5DC67008A187F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BA1FA5DC67008A187F /* Assets.xcassets */; };
 		CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BC1FA5DC67008A187F /* LaunchScreen.storyboard */; };
+		DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360641FA6C324004BB17D /* MainViewController.swift */; };
+		DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */; };
+		DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */; };
+		DF23606D1FA6D827004BB17D /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF23606C1FA6D827004BB17D /* ButtonMenuView.swift */; };
+		DF23606F1FA6D831004BB17D /* ButtonMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF23606E1FA6D831004BB17D /* ButtonMenuView.xib */; };
+		DF2360711FA6E078004BB17D /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360701FA6E078004BB17D /* RotationViewController.swift */; };
+		DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CA08A5B01FA5DC66008A187F /* LOFI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOFI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA08A5B31FA5DC67008A187F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA08A5B51FA5DC67008A187F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA08A5B81FA5DC67008A187F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA08A5BA1FA5DC67008A187F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA08A5BD1FA5DC67008A187F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA08A5BF1FA5DC67008A187F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF2360641FA6C324004BB17D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadViewController.swift; sourceTree = "<group>"; };
+		DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScanViewController.swift; sourceTree = "<group>"; };
+		DF23606C1FA6D827004BB17D /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
+		DF23606E1FA6D831004BB17D /* ButtonMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonMenuView.xib; sourceTree = "<group>"; };
+		DF2360701FA6E078004BB17D /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
+		DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +66,36 @@
 		CA08A5B21FA5DC66008A187F /* LOFI */ = {
 			isa = PBXGroup;
 			children = (
+				DF23606B1FA6D7FF004BB17D /* Controller */,
+				DF23606A1FA6D7FA004BB17D /* View */,
 				CA08A5B31FA5DC67008A187F /* AppDelegate.swift */,
-				CA08A5B51FA5DC67008A187F /* ViewController.swift */,
 				CA08A5B71FA5DC67008A187F /* Main.storyboard */,
 				CA08A5BA1FA5DC67008A187F /* Assets.xcassets */,
 				CA08A5BC1FA5DC67008A187F /* LaunchScreen.storyboard */,
 				CA08A5BF1FA5DC67008A187F /* Info.plist */,
 			);
 			path = LOFI;
+			sourceTree = "<group>";
+		};
+		DF23606A1FA6D7FA004BB17D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DF23606C1FA6D827004BB17D /* ButtonMenuView.swift */,
+				DF23606E1FA6D831004BB17D /* ButtonMenuView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DF23606B1FA6D7FF004BB17D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DF2360641FA6C324004BB17D /* MainViewController.swift */,
+				DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */,
+				DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */,
+				DF2360701FA6E078004BB17D /* RotationViewController.swift */,
+				DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +131,11 @@
 					CA08A5AF1FA5DC66008A187F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -126,6 +165,7 @@
 				CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */,
 				CA08A5BB1FA5DC67008A187F /* Assets.xcassets in Resources */,
 				CA08A5B91FA5DC67008A187F /* Main.storyboard in Resources */,
+				DF23606F1FA6D831004BB17D /* ButtonMenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA08A5B61FA5DC67008A187F /* ViewController.swift in Sources */,
+				DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */,
+				DF23606D1FA6D827004BB17D /* ButtonMenuView.swift in Sources */,
+				DF2360711FA6E078004BB17D /* RotationViewController.swift in Sources */,
+				DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */,
+				DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */,
+				DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */,
 				CA08A5B41FA5DC67008A187F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +320,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GJE9S37JFS;
+				DEVELOPMENT_TEAM = USQFGC88U6;
 				INFOPLIST_FILE = LOFI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.LOFI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,8 +336,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GJE9S37JFS;
+				DEVELOPMENT_TEAM = USQFGC88U6;
 				INFOPLIST_FILE = LOFI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.LOFI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
