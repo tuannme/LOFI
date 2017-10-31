@@ -14,10 +14,11 @@
 		DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360641FA6C324004BB17D /* MainViewController.swift */; };
 		DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */; };
 		DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */; };
-		DF23606D1FA6D827004BB17D /* ButtonMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF23606C1FA6D827004BB17D /* ButtonMenuView.swift */; };
-		DF23606F1FA6D831004BB17D /* ButtonMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF23606E1FA6D831004BB17D /* ButtonMenuView.xib */; };
+		DF23606D1FA6D827004BB17D /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF23606C1FA6D827004BB17D /* MenuItem.swift */; };
+		DF23606F1FA6D831004BB17D /* MenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF23606E1FA6D831004BB17D /* MenuItem.xib */; };
 		DF2360711FA6E078004BB17D /* RotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360701FA6E078004BB17D /* RotationViewController.swift */; };
 		DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */; };
+		DFC970FD1FA84EEC0010D701 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC970FC1FA84EEC0010D701 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +31,11 @@
 		DF2360641FA6C324004BB17D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadViewController.swift; sourceTree = "<group>"; };
 		DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScanViewController.swift; sourceTree = "<group>"; };
-		DF23606C1FA6D827004BB17D /* ButtonMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonMenuView.swift; sourceTree = "<group>"; };
-		DF23606E1FA6D831004BB17D /* ButtonMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonMenuView.xib; sourceTree = "<group>"; };
+		DF23606C1FA6D827004BB17D /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		DF23606E1FA6D831004BB17D /* MenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuItem.xib; sourceTree = "<group>"; };
 		DF2360701FA6E078004BB17D /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
 		DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneViewController.swift; sourceTree = "<group>"; };
+		DFC970FC1FA84EEC0010D701 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,9 @@
 		DF23606A1FA6D7FA004BB17D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DF23606C1FA6D827004BB17D /* ButtonMenuView.swift */,
-				DF23606E1FA6D831004BB17D /* ButtonMenuView.xib */,
+				DF23606C1FA6D827004BB17D /* MenuItem.swift */,
+				DF23606E1FA6D831004BB17D /* MenuItem.xib */,
+				DFC970FC1FA84EEC0010D701 /* ItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,7 +168,7 @@
 				CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */,
 				CA08A5BB1FA5DC67008A187F /* Assets.xcassets in Resources */,
 				CA08A5B91FA5DC67008A187F /* Main.storyboard in Resources */,
-				DF23606F1FA6D831004BB17D /* ButtonMenuView.xib in Resources */,
+				DF23606F1FA6D831004BB17D /* MenuItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,8 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFC970FD1FA84EEC0010D701 /* ItemCell.swift in Sources */,
 				DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */,
-				DF23606D1FA6D827004BB17D /* ButtonMenuView.swift in Sources */,
+				DF23606D1FA6D827004BB17D /* MenuItem.swift in Sources */,
 				DF2360711FA6E078004BB17D /* RotationViewController.swift in Sources */,
 				DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */,
 				DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */,

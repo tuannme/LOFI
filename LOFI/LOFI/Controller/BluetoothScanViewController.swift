@@ -90,8 +90,6 @@ extension BluetoothScanViewController:CBCentralManagerDelegate{
             print("didDiscover \(peripheral.name)")
         }
         
-        
-        
         tbView.reloadData()
     }
     
@@ -218,6 +216,10 @@ extension BluetoothScanViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let peripheral = peripherals[indexPath.row]
+        manager.connect(peripheral, options: nil)
+        
         tbView.deselectRow(at: indexPath, animated: true)
     }
 }

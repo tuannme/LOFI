@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Allow using bluetooth to connect robot</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow using Microphone to control robot</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Allow using Motion to control robot</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Allow using SpeechRecognition to control robot</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
@@ -34,7 +42,7 @@
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

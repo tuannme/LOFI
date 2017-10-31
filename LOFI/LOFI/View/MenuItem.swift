@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ButtonMenuView: UIView {
+class MenuItem: UIView {
 
 
     @IBOutlet weak var icImv: UIImageView!
