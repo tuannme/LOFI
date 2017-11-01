@@ -11,6 +11,8 @@
 		CA08A5B91FA5DC67008A187F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5B71FA5DC67008A187F /* Main.storyboard */; };
 		CA08A5BB1FA5DC67008A187F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BA1FA5DC67008A187F /* Assets.xcassets */; };
 		CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BC1FA5DC67008A187F /* LaunchScreen.storyboard */; };
+		CA85867E1FA9783500199E50 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA85867D1FA9783500199E50 /* CoreBluetooth.framework */; };
+		CA8586801FA983BE00199E50 /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA85867F1FA983BE00199E50 /* BluetoothService.swift */; };
 		DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360641FA6C324004BB17D /* MainViewController.swift */; };
 		DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */; };
 		DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */; };
@@ -28,6 +30,8 @@
 		CA08A5BA1FA5DC67008A187F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA08A5BD1FA5DC67008A187F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA08A5BF1FA5DC67008A187F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA85867D1FA9783500199E50 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		CA85867F1FA983BE00199E50 /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
 		DF2360641FA6C324004BB17D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadViewController.swift; sourceTree = "<group>"; };
 		DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScanViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA85867E1FA9783500199E50 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +59,7 @@
 			children = (
 				CA08A5B21FA5DC66008A187F /* LOFI */,
 				CA08A5B11FA5DC66008A187F /* Products */,
+				CA85867C1FA9783500199E50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +85,14 @@
 			path = LOFI;
 			sourceTree = "<group>";
 		};
+		CA85867C1FA9783500199E50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA85867D1FA9783500199E50 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DF23606A1FA6D7FA004BB17D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +111,7 @@
 				DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */,
 				DF2360701FA6E078004BB17D /* RotationViewController.swift */,
 				DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */,
+				CA85867F1FA983BE00199E50 /* BluetoothService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +201,7 @@
 				DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */,
 				DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */,
 				DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */,
+				CA8586801FA983BE00199E50 /* BluetoothService.swift in Sources */,
 				CA08A5B41FA5DC67008A187F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

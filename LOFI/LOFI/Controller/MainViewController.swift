@@ -31,7 +31,9 @@ class MainViewController: UIViewController {
         let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.didTapLofi))
         menuView.isUserInteractionEnabled = true
         menuView.addGestureRecognizer(tapGes)
-
+        
+        BluetoothService.shareInstance.bluetoothCentralDelegate = self
+        
     }
     @objc func didTapLofi() {
         UIView.animate(withDuration: 0.1, animations: {
@@ -84,10 +86,21 @@ class MainViewController: UIViewController {
         touchPadContainer.isHidden = true
         rotationContainer.isHidden = true
         microphoneContainer.isHidden = true
-        bluetoothVC?.scanBluetooth()
+        BluetoothService.shareInstance.scanBluetooth()
         self.rotaionVC?.stopMotion()
         self.microVC?.stopSpeaking()
     }
+}
+
+extension MainViewController:BluetoothCentralDelegate{
+
+    func didConnect() {
+        self.touchPadContainer.isHidden = false
+        self.bluetoothContainer.isHidden = true
+        self.rotationContainer.isHidden = true
+        self.microphoneContainer.isHidden = true
+    }
+
 }
 
 extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource{
