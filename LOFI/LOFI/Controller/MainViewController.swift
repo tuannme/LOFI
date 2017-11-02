@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS 10.0, *)
 class MainViewController: UIViewController {
 
     @IBOutlet weak var touchPadContainer: UIView!
@@ -58,6 +59,18 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func inforAction(_ sender: Any) {
+        let settingVc = SettingViewController(nibName: "SettingViewController", bundle: nil)
+        var frameVC = CGRect(x: -self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        settingVc.view.frame = frameVC
+        self.addChildViewController(settingVc)
+        self.view.addSubview(settingVc.view)
+        
+        frameVC.origin.x = 0
+        
+        UIView.animate(withDuration: 0.3) {
+            settingVc.view.frame = frameVC
+        }
+        
         
     }
     
@@ -92,6 +105,7 @@ class MainViewController: UIViewController {
     }
 }
 
+@available(iOS 10.0, *)
 extension MainViewController:BluetoothCentralDelegate{
 
     func didConnect() {
@@ -103,6 +117,7 @@ extension MainViewController:BluetoothCentralDelegate{
 
 }
 
+@available(iOS 10.0, *)
 extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
@@ -154,6 +169,7 @@ extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
 }
 
+@available(iOS 10.0, *)
 extension MainViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

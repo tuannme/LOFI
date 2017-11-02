@@ -25,6 +25,9 @@ class BluetoothService: NSObject {
         return instance
     }()
     
+    var mPeripheral:CBPeripheral?
+    var mCharacteristics:[CBCharacteristic]?
+    
     let BLEService = "FFE0"
     let BLECharacteristic  = "FFE1"
     var password:String?
@@ -39,13 +42,10 @@ class BluetoothService: NSObject {
         manager = CBCentralManager(delegate: self, queue: nil)
     }
     
-    
     func scanBluetooth(){
-        
         print("START SCANING")
         self.peripherals.removeAll()
         self.manager.scanForPeripherals(withServices:nil, options: nil)
-        
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.stopScan(sender:)), userInfo:nil , repeats: false)
     }
     
@@ -56,6 +56,23 @@ class BluetoothService: NSObject {
         }
     }
     
+    func sendDirection(direction:Direction)  {
+        
+        if let message = Utils.directionToString(direction: direction){
+            
+            guard let peripheral = mPeripheral else{return}
+            guard let characteristic = mCharacteristics?.last else{return}
+            
+            self.sendData(message: message, peripheral: peripheral, characteristic: characteristic)
+        }
+    }
+    
+    func sendData(message:String,peripheral:CBPeripheral,characteristic:CBCharacteristic){
+        if let messageData = message.data(using: .utf8){
+            peripheral.writeValue(messageData, for: characteristic, type: .withoutResponse)
+        }
+    }
+    
 }
 
 extension BluetoothService:CBCentralManagerDelegate{
@@ -63,6 +80,7 @@ extension BluetoothService:CBCentralManagerDelegate{
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.delegate = self
         peripheral.discoverServices(nil)
+        mPeripheral = peripheral
         self.bluetoothCentralDelegate?.didConnect()
     }
     
@@ -73,7 +91,7 @@ extension BluetoothService:CBCentralManagerDelegate{
         }))
         UIApplication.shared.keyWindow?.rootViewController?.present(alertVC, animated: true, completion: nil)
         peripheral.delegate = nil
-      
+        mPeripheral = nil
     }
     
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
@@ -86,8 +104,6 @@ extension BluetoothService:CBCentralManagerDelegate{
             self.bluetoothPeripheralDelegate?.didDiscoveryPeripheral()
             print("didDiscover \(String(describing: peripheral.name))")
         }
-        
-        
     }
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
@@ -121,8 +137,10 @@ extension BluetoothService:CBPeripheralDelegate{
                 if char.uuid.isEqual(CBUUID(string: BLECharacteristic)){
                     peripheral.setNotifyValue(true, for: char)
                     print("Found Bluno DATA Characteristic")
+                    
                 }
             }
+            mCharacteristics = characteristics
         }
         
     }
@@ -144,7 +162,7 @@ extension BluetoothService:CBPeripheralDelegate{
                 peripheralName = peripheral.identifier.uuidString
             }
             
-            
+
             let alert = UIAlertView(title: "message from \(peripheralName)", message: data, delegate: nil, cancelButtonTitle: "OK")
             alert.show()
  

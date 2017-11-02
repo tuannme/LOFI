@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3591BD1BB572378210CD3E4B /* Pods_LOFI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDA29AB34945E05C19D78E0 /* Pods_LOFI.framework */; };
 		CA08A5B41FA5DC67008A187F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA08A5B31FA5DC67008A187F /* AppDelegate.swift */; };
 		CA08A5B91FA5DC67008A187F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5B71FA5DC67008A187F /* Main.storyboard */; };
 		CA08A5BB1FA5DC67008A187F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BA1FA5DC67008A187F /* Assets.xcassets */; };
 		CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BC1FA5DC67008A187F /* LaunchScreen.storyboard */; };
 		CA85867E1FA9783500199E50 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA85867D1FA9783500199E50 /* CoreBluetooth.framework */; };
 		CA8586801FA983BE00199E50 /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA85867F1FA983BE00199E50 /* BluetoothService.swift */; };
+		DF0530701FAAE5EC0007B109 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05306F1FAAE5EC0007B109 /* Utils.swift */; };
+		DF0530761FAAF0020007B109 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0530741FAAF0020007B109 /* SettingViewController.swift */; };
+		DF0530771FAAF0020007B109 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0530751FAAF0020007B109 /* SettingViewController.xib */; };
+		DF05307A1FAAF0AB0007B109 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0530781FAAF0AB0007B109 /* SettingCell.swift */; };
+		DF05307B1FAAF0AB0007B109 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0530791FAAF0AB0007B109 /* SettingCell.xib */; };
+		DF05307D1FAAFB480007B109 /* ConstantString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05307C1FAAFB480007B109 /* ConstantString.swift */; };
 		DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360641FA6C324004BB17D /* MainViewController.swift */; };
 		DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */; };
 		DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */; };
@@ -24,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CDA29AB34945E05C19D78E0 /* Pods_LOFI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LOFI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78B258EEC92D9AF2E623F430 /* Pods-LOFI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOFI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LOFI/Pods-LOFI.debug.xcconfig"; sourceTree = "<group>"; };
 		CA08A5B01FA5DC66008A187F /* LOFI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOFI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA08A5B31FA5DC67008A187F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA08A5B81FA5DC67008A187F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +41,12 @@
 		CA08A5BF1FA5DC67008A187F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA85867D1FA9783500199E50 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		CA85867F1FA983BE00199E50 /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
+		DF05306F1FAAE5EC0007B109 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		DF0530741FAAF0020007B109 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		DF0530751FAAF0020007B109 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		DF0530781FAAF0AB0007B109 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		DF0530791FAAF0AB0007B109 /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		DF05307C1FAAFB480007B109 /* ConstantString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantString.swift; sourceTree = "<group>"; };
 		DF2360641FA6C324004BB17D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPadViewController.swift; sourceTree = "<group>"; };
 		DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothScanViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +55,7 @@
 		DF2360701FA6E078004BB17D /* RotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationViewController.swift; sourceTree = "<group>"; };
 		DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneViewController.swift; sourceTree = "<group>"; };
 		DFC970FC1FA84EEC0010D701 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		ED9D9A2ED7B60536FED55DF3 /* Pods-LOFI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LOFI.release.xcconfig"; path = "Pods/Target Support Files/Pods-LOFI/Pods-LOFI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,18 +64,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA85867E1FA9783500199E50 /* CoreBluetooth.framework in Frameworks */,
+				3591BD1BB572378210CD3E4B /* Pods_LOFI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C2FD2CA473AF5B7F4C5E0D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78B258EEC92D9AF2E623F430 /* Pods-LOFI.debug.xcconfig */,
+				ED9D9A2ED7B60536FED55DF3 /* Pods-LOFI.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CA08A5A71FA5DC66008A187F = {
 			isa = PBXGroup;
 			children = (
 				CA08A5B21FA5DC66008A187F /* LOFI */,
 				CA08A5B11FA5DC66008A187F /* Products */,
 				CA85867C1FA9783500199E50 /* Frameworks */,
+				5C2FD2CA473AF5B7F4C5E0D9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +101,7 @@
 		CA08A5B21FA5DC66008A187F /* LOFI */ = {
 			isa = PBXGroup;
 			children = (
+				DF05306E1FAAE5BC0007B109 /* Model */,
 				DF23606B1FA6D7FF004BB17D /* Controller */,
 				DF23606A1FA6D7FA004BB17D /* View */,
 				CA08A5B31FA5DC67008A187F /* AppDelegate.swift */,
@@ -89,8 +117,30 @@
 			isa = PBXGroup;
 			children = (
 				CA85867D1FA9783500199E50 /* CoreBluetooth.framework */,
+				5CDA29AB34945E05C19D78E0 /* Pods_LOFI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF05306E1FAAE5BC0007B109 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA85867F1FA983BE00199E50 /* BluetoothService.swift */,
+				DF05306F1FAAE5EC0007B109 /* Utils.swift */,
+				DF05307C1FAAFB480007B109 /* ConstantString.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF0530731FAAEFEF0007B109 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				DF0530741FAAF0020007B109 /* SettingViewController.swift */,
+				DF0530751FAAF0020007B109 /* SettingViewController.xib */,
+				DF0530781FAAF0AB0007B109 /* SettingCell.swift */,
+				DF0530791FAAF0AB0007B109 /* SettingCell.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		DF23606A1FA6D7FA004BB17D /* View */ = {
@@ -106,12 +156,12 @@
 		DF23606B1FA6D7FF004BB17D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DF0530731FAAEFEF0007B109 /* Setting */,
 				DF2360641FA6C324004BB17D /* MainViewController.swift */,
 				DF2360661FA6D19F004BB17D /* TouchPadViewController.swift */,
 				DF2360681FA6D1AF004BB17D /* BluetoothScanViewController.swift */,
 				DF2360701FA6E078004BB17D /* RotationViewController.swift */,
 				DF2360721FA6E08A004BB17D /* MicrophoneViewController.swift */,
-				CA85867F1FA983BE00199E50 /* BluetoothService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -123,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA08A5C21FA5DC67008A187F /* Build configuration list for PBXNativeTarget "LOFI" */;
 			buildPhases = (
+				0228E3C118B6B8E41B261146 /* [CP] Check Pods Manifest.lock */,
 				CA08A5AC1FA5DC66008A187F /* Sources */,
 				CA08A5AD1FA5DC66008A187F /* Frameworks */,
 				CA08A5AE1FA5DC66008A187F /* Resources */,
+				AEFFF494AAF8A4B55095D844 /* [CP] Embed Pods Frameworks */,
+				6783D7970CEE3CD8E4806F68 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,7 +201,7 @@
 				TargetAttributes = {
 					CA08A5AF1FA5DC66008A187F = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -181,13 +234,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */,
+				DF0530771FAAF0020007B109 /* SettingViewController.xib in Resources */,
 				CA08A5BB1FA5DC67008A187F /* Assets.xcassets in Resources */,
 				CA08A5B91FA5DC67008A187F /* Main.storyboard in Resources */,
+				DF05307B1FAAF0AB0007B109 /* SettingCell.xib in Resources */,
 				DF23606F1FA6D831004BB17D /* MenuItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0228E3C118B6B8E41B261146 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LOFI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6783D7970CEE3CD8E4806F68 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LOFI/Pods-LOFI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AEFFF494AAF8A4B55095D844 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LOFI/Pods-LOFI-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LOFI/Pods-LOFI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA08A5AC1FA5DC66008A187F /* Sources */ = {
@@ -195,14 +304,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC970FD1FA84EEC0010D701 /* ItemCell.swift in Sources */,
+				DF0530761FAAF0020007B109 /* SettingViewController.swift in Sources */,
+				DF05307A1FAAF0AB0007B109 /* SettingCell.swift in Sources */,
 				DF2360651FA6C324004BB17D /* MainViewController.swift in Sources */,
 				DF23606D1FA6D827004BB17D /* MenuItem.swift in Sources */,
+				DF0530701FAAE5EC0007B109 /* Utils.swift in Sources */,
 				DF2360711FA6E078004BB17D /* RotationViewController.swift in Sources */,
 				DF2360691FA6D1AF004BB17D /* BluetoothScanViewController.swift in Sources */,
 				DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */,
 				DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */,
 				CA8586801FA983BE00199E50 /* BluetoothService.swift in Sources */,
 				CA08A5B41FA5DC67008A187F /* AppDelegate.swift in Sources */,
+				DF05307D1FAAFB480007B109 /* ConstantString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,15 +450,19 @@
 		};
 		CA08A5C31FA5DC67008A187F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78B258EEC92D9AF2E623F430 /* Pods-LOFI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = USQFGC88U6;
 				INFOPLIST_FILE = LOFI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.LOFI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trams.clover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "69e738a7-6800-458d-abd1-c18da1c3cc79";
+				PROVISIONING_PROFILE_SPECIFIER = cloverDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,15 +470,19 @@
 		};
 		CA08A5C41FA5DC67008A187F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED9D9A2ED7B60536FED55DF3 /* Pods-LOFI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = USQFGC88U6;
 				INFOPLIST_FILE = LOFI/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.LOFI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trams.clover;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "69e738a7-6800-458d-abd1-c18da1c3cc79";
+				PROVISIONING_PROFILE_SPECIFIER = cloverDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

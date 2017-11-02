@@ -9,6 +9,7 @@
 import UIKit
 import Speech
 
+@available(iOS 10.0, *)
 class MicrophoneViewController: UIViewController {
 
     @IBOutlet weak var speedResultLb: UILabel!
@@ -63,15 +64,32 @@ class MicrophoneViewController: UIViewController {
         guard let recognitionRequest = recognitionRequest else{return}
         
         recognitionRequest.shouldReportPartialResults = true
-        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (speedResult, error) in
-            DispatchQueue.main.async {
-               self.speedResultLb.text = speedResult?.bestTranscription.formattedString
-            }
-        })
         
         audioEngine = AVAudioEngine()
-        let inputNode = audioEngine?.inputNode
         
+        recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (speedResult, error) in
+            
+            if let transcription = speedResult?.transcriptions{
+                print(transcription.count)
+            }
+            
+            if let bestTranscription = speedResult?.bestTranscription{
+                DispatchQueue.main.async {
+                    self.speedResultLb.text = bestTranscription.formattedString
+                    
+                    self.audioEngine?.stop()
+                    self.audioEngine = nil
+                    self.recognitionRequest = nil
+                    self.recognitionTask = nil
+                    self.startSpeaking()
+                    
+                }
+            }
+            
+        })
+        
+        
+        let inputNode = audioEngine?.inputNode
         let recordingFormat = inputNode?.outputFormat(forBus: 0)
         inputNode?.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat, block: { (buffer, time) in
             self.recognitionRequest?.append(buffer)
@@ -86,6 +104,7 @@ class MicrophoneViewController: UIViewController {
         }
     }
     
+    
     func stopSpeaking(){
         recognitionTask?.cancel()
         recognitionTask = nil
@@ -98,6 +117,7 @@ class MicrophoneViewController: UIViewController {
     
 }
 
+@available(iOS 10.0, *)
 extension MicrophoneViewController:SFSpeechRecognizerDelegate{
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         

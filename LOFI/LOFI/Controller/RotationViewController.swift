@@ -12,15 +12,17 @@ import CoreMotion
 class RotationViewController: UIViewController,UIAccelerometerDelegate  {
     
     @IBOutlet weak var rotationView: UIImageView!
-    let motionManager = CMMotionManager()
     
     @IBOutlet weak var boundView: UIView!
     
+    let motionManager = CMMotionManager()
+    var prevLocation:CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+       
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -28,6 +30,8 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
     
     func startMotionDetect(){
         
+        print("START _ MOTION ")
+        prevLocation = CGPoint(x: rotationView.frame.width/2, y: rotationView.frame.width/2)
         let stepMoveFactor:CGFloat = 8
         
         motionManager.deviceMotionUpdateInterval = 1/60
@@ -37,7 +41,7 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
                 
                 var rect = self.rotationView.frame
                 
-                print("\(data.acceleration.x) : \(data.acceleration.y)")
+                //print("\(data.acceleration.x) : \(data.acceleration.y)")
                 
                 let moveToX = rect.origin.x - CGFloat(data.acceleration.y)*stepMoveFactor
                 let maxX = self.boundView.frame.size.width - rect.size.width
@@ -63,13 +67,24 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
                 
                 UIView.animate(withDuration: 0, delay: 0, options: .curveEaseOut, animations: {
                     self.rotationView.frame = rect
+                    
+                    let center = self.rotationView.center
+                    
+                    let direction = Utils.getDirectionBasic(prevLocation: self.prevLocation, currentLocation: center)
+                    if direction != .NON{
+                        self.prevLocation = center
+                    }
+                    
                 }, completion: nil)
                 
             }
         }
     }
     
+
+    
     func stopMotion(){
+        print("STOP _ MOTION ")
         motionManager.stopAccelerometerUpdates()
     }
     
