@@ -11,22 +11,62 @@ import Speech
 
 
 class TouchPadViewController: UIViewController {
-
-    @IBOutlet weak var touchPadContainer: UIView!
-    @IBOutlet weak var touchPad: UIImageView!
     
-    @IBOutlet weak var sliderA: UISlider!
-    @IBOutlet weak var sliderB: UISlider!
+    @IBOutlet weak var touchPadContainer: UIView!
+    
+    @IBOutlet weak var squareBtn: ImageButton!
+    @IBOutlet weak var triangleBtn: ImageButton!
+    @IBOutlet weak var xBtn: ImageButton!
+    @IBOutlet weak var oBtn: ImageButton!
+    
     
     var prevLocation:CGPoint!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        sliderA.setThumbImage(UIImage(named: "1.png"), for: .normal)
-        sliderB.setThumbImage(UIImage(named: "2.png"), for: .normal)
-
+        squareBtn.tapAction = {
+            
+        }
+        triangleBtn.tapAction = {
+            
+        }
+        xBtn.tapAction = {
+            
+        }
+        oBtn.tapAction = {
+            
+        }
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func actionMoveUp(_ sender: Any) {
+         BluetoothService.shareInstance.sendDirection(direction: .UP)
+    }
+    
+    @IBAction func actionMoveDown(_ sender: Any) {
+        BluetoothService.shareInstance.sendDirection(direction: .DOWN)
+    }
+    
+    
+    @IBAction func actionMoveRight(_ sender: Any) {
+        BluetoothService.shareInstance.sendDirection(direction: .RIGHT)
+    }
+    
+    @IBAction func actionMoveLeft(_ sender: Any) {
+        BluetoothService.shareInstance.sendDirection(direction: .LEFT)
+    }
+    
+    
+    
+}
+
+/*
+extension TouchPadViewController{
     
     var isMove = false
     
@@ -52,7 +92,7 @@ class TouchPadViewController: UIViewController {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let touch = touches.first?.location(in: touchPadContainer) else{return}
-
+        
         if isMove {
             
             let maxSize = touchPadContainer.frame.width
@@ -66,7 +106,7 @@ class TouchPadViewController: UIViewController {
                 prevLocation = center
                 BluetoothService.shareInstance.sendDirection(direction: direction)
             }
-  
+            
             UIView.animate(withDuration: 0.0, delay: 0.0, options: .curveEaseOut, animations: {
                 self.touchPad.center = center
             }, completion: { (done) in
@@ -89,11 +129,6 @@ class TouchPadViewController: UIViewController {
         
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
+
+*/

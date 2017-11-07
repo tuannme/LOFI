@@ -14,6 +14,7 @@
 		CA08A5BE1FA5DC67008A187F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA08A5BC1FA5DC67008A187F /* LaunchScreen.storyboard */; };
 		CA85867E1FA9783500199E50 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA85867D1FA9783500199E50 /* CoreBluetooth.framework */; };
 		CA8586801FA983BE00199E50 /* BluetoothService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA85867F1FA983BE00199E50 /* BluetoothService.swift */; };
+		CA9CAA031FB2178400A50E88 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CAA021FB2178400A50E88 /* ImageButton.swift */; };
 		DF0530701FAAE5EC0007B109 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF05306F1FAAE5EC0007B109 /* Utils.swift */; };
 		DF0530761FAAF0020007B109 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0530741FAAF0020007B109 /* SettingViewController.swift */; };
 		DF0530771FAAF0020007B109 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0530751FAAF0020007B109 /* SettingViewController.xib */; };
@@ -41,6 +42,7 @@
 		CA08A5BF1FA5DC67008A187F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA85867D1FA9783500199E50 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		CA85867F1FA983BE00199E50 /* BluetoothService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothService.swift; sourceTree = "<group>"; };
+		CA9CAA021FB2178400A50E88 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		DF05306F1FAAE5EC0007B109 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DF0530741FAAF0020007B109 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DF0530751FAAF0020007B109 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				DF23606C1FA6D827004BB17D /* MenuItem.swift */,
 				DF23606E1FA6D831004BB17D /* MenuItem.xib */,
 				DFC970FC1FA84EEC0010D701 /* ItemCell.swift */,
+				CA9CAA021FB2178400A50E88 /* ImageButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,7 +204,7 @@
 				TargetAttributes = {
 					CA08A5AF1FA5DC66008A187F = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -314,6 +317,7 @@
 				DF2360731FA6E08A004BB17D /* MicrophoneViewController.swift in Sources */,
 				DF2360671FA6D19F004BB17D /* TouchPadViewController.swift in Sources */,
 				CA8586801FA983BE00199E50 /* BluetoothService.swift in Sources */,
+				CA9CAA031FB2178400A50E88 /* ImageButton.swift in Sources */,
 				CA08A5B41FA5DC67008A187F /* AppDelegate.swift in Sources */,
 				DF05307D1FAAFB480007B109 /* ConstantString.swift in Sources */,
 			);
@@ -454,15 +458,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = USQFGC88U6;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJE9S37JFS;
 				INFOPLIST_FILE = LOFI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trams.clover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trams.cloverxxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "69e738a7-6800-458d-abd1-c18da1c3cc79";
-				PROVISIONING_PROFILE_SPECIFIER = cloverDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,15 +478,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = USQFGC88U6;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GJE9S37JFS;
 				INFOPLIST_FILE = LOFI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trams.clover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trams.cloverxxx;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "69e738a7-6800-458d-abd1-c18da1c3cc79";
-				PROVISIONING_PROFILE_SPECIFIER = cloverDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

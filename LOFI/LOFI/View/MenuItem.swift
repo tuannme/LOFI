@@ -15,8 +15,7 @@ class MenuItem: UIView {
     @IBOutlet weak var titleLb: UILabel!
     
     var tapAction:(()->Void)?
-    //var callBackDeleteImage:(()->Void)?
-    
+
     @IBInspectable var title: String? {
         get {
             return titleLb.text
