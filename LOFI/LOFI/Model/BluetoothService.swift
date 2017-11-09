@@ -75,6 +75,7 @@ class BluetoothService: NSObject {
     
     func sendData(message:String,peripheral:CBPeripheral,characteristic:CBCharacteristic){
         if let messageData = message.data(using: .utf8){
+            print("will send message : \(message)")
             peripheral.writeValue(messageData, for: characteristic, type: .withoutResponse)
         }
     }

@@ -216,4 +216,61 @@ class Utils{
         }
     }
     
+    static func getDirectionPeriod(prevLocation:CGPoint,currentLocation:CGPoint) -> Direction{
+        
+        if prevLocation.x > currentLocation.x && prevLocation.y > currentLocation.y {
+            
+            if abs(prevLocation.x - currentLocation.x) < abs(prevLocation.y - currentLocation.y){
+                print("move up")
+                return .UP
+            }else{
+                return .LEFT
+            }
+            
+        }else if prevLocation.x > currentLocation.x && prevLocation.y < currentLocation.y {
+            
+            if abs(prevLocation.x - currentLocation.x) < abs(prevLocation.y - currentLocation.y){
+                print("move down")
+                return .DOWN
+            }else{
+                print("move left")
+                return .LEFT
+            }
+            
+        }else if prevLocation.x < currentLocation.x && prevLocation.y > currentLocation.y {
+            
+            if abs(prevLocation.x - currentLocation.x) < abs(prevLocation.y - currentLocation.y){
+                print("move up")
+                return .UP
+            }else{
+                print("move right")
+                return .RIGHT
+            }
+            
+        }else if prevLocation.x < currentLocation.x && prevLocation.y < currentLocation.y {
+            
+            if abs(prevLocation.x - currentLocation.x) < abs(prevLocation.y - currentLocation.y){
+                print("move down")
+                return .DOWN
+            }else{
+                print("move right")
+                return .RIGHT
+            }
+            
+        } else if prevLocation.x == currentLocation.x && prevLocation.y > currentLocation.y {
+            print("move up")
+            return .UP
+        }else if prevLocation.x == currentLocation.x && prevLocation.y < currentLocation.y {
+            print("move down")
+            return .DOWN
+        }else if prevLocation.x < currentLocation.x && prevLocation.y == currentLocation.y {
+            print("move right")
+            return .RIGHT
+        }else if prevLocation.x > currentLocation.x && prevLocation.y == currentLocation.y {
+            print("move left")
+            return .LEFT
+        }
+        return .NON
+    }
+    
 }

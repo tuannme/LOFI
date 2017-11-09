@@ -125,10 +125,14 @@ class MicrophoneViewController: UIViewController {
             if now.timeIntervalSince(lastTime) > 2 {
                 recognitionTask?.cancel()
                 recognitionTask = nil
+                
+                if let message = speedResultLb.text{
+                    let convert = message.folding(options: .diacriticInsensitive, locale: Locale(identifier: "en"))
+                    BluetoothService.shareInstance.sendMessage(message: convert)
+                }
                 self.startSpeaking()
             }
         }
-        
     }
     
 

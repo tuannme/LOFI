@@ -9,7 +9,6 @@
 import UIKit
 import Speech
 
-
 class TouchPadViewController: UIViewController {
     
     @IBOutlet weak var touchPadContainer: UIView!
@@ -17,10 +16,10 @@ class TouchPadViewController: UIViewController {
     @IBOutlet weak var triangleBtn: ImageButton!
     @IBOutlet weak var xBtn: ImageButton!
     @IBOutlet weak var oBtn: ImageButton!
-    
     @IBOutlet weak var touchPad: UIImageView!
     
     var isMove = false
+    var privot = Date()
     var prevLocation:CGPoint!
     
     override func viewDidLoad() {
@@ -96,12 +95,26 @@ extension TouchPadViewController{
             
             let center = CGPoint(x: centerX, y: centerY)
             
+            /*send data every 1s*/
+            
+            let now = Date()
+            if now.timeIntervalSince(self.privot) >= 1{
+                self.privot = now
+                let direction = Utils.getDirectionPeriod(prevLocation: self.prevLocation, currentLocation: center)
+                if direction != .NON{
+                    BluetoothService.shareInstance.sendDirection(direction: direction)
+                }
+                self.prevLocation = center
+            }
+            //self.prevLocation = center
+            
+            /* send data when move > 10 unit
             let direction = Utils.getDirectionBasic(prevLocation: prevLocation, currentLocation: center)
             if direction != .NON{
                 prevLocation = center
                 BluetoothService.shareInstance.sendDirection(direction: direction)
             }
-            
+            */
             UIView.animate(withDuration: 0.0, delay: 0.0, options: .curveEaseOut, animations: {
                 self.touchPad.center = center
             }, completion: { (done) in

@@ -17,11 +17,12 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
     let motionManager = CMMotionManager()
     var prevLocation:CGPoint!
     
+    var privot = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -62,12 +63,24 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
                     
                     let center = self.rotationView.center
                     
+                    /*send data every 1s*/
+                    let now = Date()
+                    if now.timeIntervalSince(self.privot) >= 1{
+                        self.privot = now
+                        let direction = Utils.getDirectionPeriod(prevLocation: self.prevLocation, currentLocation: center)
+                        if direction != .NON{
+                            BluetoothService.shareInstance.sendDirection(direction: direction)
+                        }
+                    }
+                    self.prevLocation = center
+                    
+                    /* get direction by move > 10 unit
                     let direction = Utils.getDirectionBasic(prevLocation: self.prevLocation, currentLocation: center)
                     if direction != .NON{
                         self.prevLocation = center
                         BluetoothService.shareInstance.sendDirection(direction: direction)
                     }
-                    
+                    */
                 }, completion: nil)
                 
             }
