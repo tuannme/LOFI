@@ -13,13 +13,14 @@ import Speech
 class TouchPadViewController: UIViewController {
     
     @IBOutlet weak var touchPadContainer: UIView!
-    
     @IBOutlet weak var squareBtn: ImageButton!
     @IBOutlet weak var triangleBtn: ImageButton!
     @IBOutlet weak var xBtn: ImageButton!
     @IBOutlet weak var oBtn: ImageButton!
     
+    @IBOutlet weak var touchPad: UIImageView!
     
+    var isMove = false
     var prevLocation:CGPoint!
     
     override func viewDidLoad() {
@@ -43,32 +44,10 @@ class TouchPadViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func actionMoveUp(_ sender: Any) {
-         BluetoothService.shareInstance.sendDirection(direction: .UP)
-    }
-    
-    @IBAction func actionMoveDown(_ sender: Any) {
-        BluetoothService.shareInstance.sendDirection(direction: .DOWN)
-    }
-    
-    
-    @IBAction func actionMoveRight(_ sender: Any) {
-        BluetoothService.shareInstance.sendDirection(direction: .RIGHT)
-    }
-    
-    @IBAction func actionMoveLeft(_ sender: Any) {
-        BluetoothService.shareInstance.sendDirection(direction: .LEFT)
-    }
-    
-    
-    
 }
 
-/*
+
 extension TouchPadViewController{
-    
-    var isMove = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first?.location(in: touchPad) else{return}
@@ -87,17 +66,17 @@ extension TouchPadViewController{
         }
     }
     
-    
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let touch = touches.first?.location(in: touchPadContainer) else{return}
         
+        let offset = touchPad.frame.size.width/2
+        
         if isMove {
             
             let maxSize = touchPadContainer.frame.width
-            let centerX = touch.x > 0 && touch.x < maxSize ? touch.x : touchPad.center.x
-            let centerY = touch.y > 0 && touch.y < maxSize ? touch.y : touchPad.center.y
+            let centerX = touch.x - offset > 0 && touch.x + offset < maxSize ? touch.x : touchPad.center.x
+            let centerY = touch.y  - offset > 0 && touch.y  + offset < maxSize ? touch.y : touchPad.center.y
             
             let center = CGPoint(x: centerX, y: centerY)
             
@@ -130,5 +109,3 @@ extension TouchPadViewController{
     }
     
 }
-
-*/

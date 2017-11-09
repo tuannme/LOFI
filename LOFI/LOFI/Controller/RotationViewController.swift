@@ -12,7 +12,6 @@ import CoreMotion
 class RotationViewController: UIViewController,UIAccelerometerDelegate  {
     
     @IBOutlet weak var rotationView: UIImageView!
-    
     @IBOutlet weak var boundView: UIView!
     
     let motionManager = CMMotionManager()
@@ -33,7 +32,7 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
         print("START _ MOTION ")
         prevLocation = CGPoint(x: rotationView.frame.width/2, y: rotationView.frame.width/2)
         let stepMoveFactor:CGFloat = 8
-        
+       
         motionManager.deviceMotionUpdateInterval = 1/60
         motionManager.startAccelerometerUpdates(to: OperationQueue()) { (data, error) in
             DispatchQueue.main.async {
@@ -43,26 +42,19 @@ class RotationViewController: UIViewController,UIAccelerometerDelegate  {
                 
                 //print("\(data.acceleration.x) : \(data.acceleration.y)")
                 
-                let moveToX = rect.origin.x - CGFloat(data.acceleration.y)*stepMoveFactor
+                let moveToX = rect.origin.x + CGFloat(data.acceleration.y)*stepMoveFactor
                 let maxX = self.boundView.frame.size.width - rect.size.width
                 
                 let moveToY = rect.origin.y + CGFloat(data.acceleration.x)*stepMoveFactor
                 let maxY = self.boundView.frame.size.height - rect.size.height
                 
-                if moveToX >= 0 && moveToX <= maxX{
+            
+                 if moveToX >= 0 && moveToX <= maxX{
                     rect.origin.x += CGFloat(data.acceleration.y)*stepMoveFactor
-                }else if moveToX < 0 {
-                    rect.origin.x = 1
-                }else if moveToX > maxX{
-                    rect.origin.x = maxX - 1
-                }
-                
+                 }
+
                 if moveToY >= 0 && moveToY <= maxY{
                     rect.origin.y += CGFloat(data.acceleration.x)*stepMoveFactor
-                }else if moveToY < 0 {
-                    rect.origin.y = 1
-                }else if moveToY > maxY{
-                    rect.origin.y = maxY + 1
                 }
                 
                 UIView.animate(withDuration: 0, delay: 0, options: .curveEaseOut, animations: {

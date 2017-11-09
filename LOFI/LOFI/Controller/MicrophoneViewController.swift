@@ -14,6 +14,9 @@ class MicrophoneViewController: UIViewController {
 
     @IBOutlet weak var speedResultLb: UILabel!
     
+    @IBOutlet weak var circleView: UIView!
+    
+    
     var speechRecognizer:SFSpeechRecognizer?
     var recognitionRequest:SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask:SFSpeechRecognitionTask?
@@ -102,6 +105,8 @@ class MicrophoneViewController: UIViewController {
         }catch let error{
             print("audioEngine start error \(error)")
         }
+        
+         drawCircle()
     }
     
     
@@ -113,6 +118,34 @@ class MicrophoneViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func drawCircle(){
+        
+        circleView.clipsToBounds = true
+        circleView.layer.borderColor = UIColor.orange.cgColor
+        circleView.layer.borderWidth = 3.0
+        circleView.layer.cornerRadius = circleView.frame.width/2
+        
+        let color = CABasicAnimation(keyPath: "borderColor")
+        color.fromValue = UIColor.white.cgColor
+        color.toValue = UIColor.white.withAlphaComponent(0).cgColor
+        
+        let shrink = CABasicAnimation(keyPath: "transform.scale")
+        shrink.toValue = NSNumber(value: 2)
+        
+        let width = CABasicAnimation(keyPath: "borderWidth")
+        width.fromValue = 3
+        width.toValue = 0
+        
+        let theGroup = CAAnimationGroup()
+        theGroup.animations = [color,shrink,width]
+        theGroup.duration   = 1.5;
+        theGroup.repeatCount = HUGE
+        theGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+        
+        circleView.layer.add(theGroup, forKey: "theGroup")
+        
     }
     
 }
