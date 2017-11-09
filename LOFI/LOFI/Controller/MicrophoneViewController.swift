@@ -133,6 +133,8 @@ class MicrophoneViewController: UIViewController {
     
 
     func stopSpeaking(){
+        timer?.invalidate()
+        timer = nil
         recognitionTask?.cancel()
         recognitionTask = nil
         circleView.layer.removeAllAnimations()

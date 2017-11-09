@@ -26,6 +26,10 @@ class TerminalViewController: UIViewController {
         inputTextField.layer.borderColor = UIColor.orange.cgColor
         
     }
+    func resetData() {
+        arrTerminals.removeAll()
+        tbView.reloadData()
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         inputTextField.resignFirstResponder()

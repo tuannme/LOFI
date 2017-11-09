@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
     var bluetoothVC:BluetoothScanViewController?
     var rotaionVC:RotationViewController?
     var microVC:MicrophoneViewController?
-    
+    var terminalVC:TerminalViewController?
     
     
     var items = ["GAMEPAD","ROTAION","MICROPHONE","REMOTE"]
@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
             self.menuView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }
         
+        self.infoBtn.setImage(#imageLiteral(resourceName: "infor"), for: .normal)
         bluetoothContainer.isHidden = true
         touchPadContainer.isHidden = true
         rotationContainer.isHidden = true
@@ -92,6 +93,9 @@ class MainViewController: UIViewController {
             break
         case is MicrophoneViewController:
             microVC = (destinationVC as! MicrophoneViewController)
+            break
+        case is TerminalViewController:
+            terminalVC = (destinationVC as! TerminalViewController)
             break
         default:
             break
@@ -180,6 +184,7 @@ extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource
             self.rotationContainer.isHidden = true
             self.microphoneContainer.isHidden = true
             self.terminalContainer.isHidden = false
+            self.terminalVC?.resetData()
             break
         default:
             break
