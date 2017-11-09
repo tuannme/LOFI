@@ -12,8 +12,8 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var tbView: UITableView!
     
-    var defaultValues = ["LEFT","RIGHT","UP","DOWN"]
-    var keys = [MOVE_LEFT,MOVE_RIGHT,MOVE_UP,MOVE_DOWN]
+    var defaultValues = ["LEFT","RIGHT","UP","DOWN","T","S","X","O"]
+    var keys = [MOVE_LEFT,MOVE_RIGHT,MOVE_UP,MOVE_DOWN,TRIANGLE,SQUARE,X,O]
     
     @IBOutlet weak var blueView: UIView!
     override func viewDidLoad() {

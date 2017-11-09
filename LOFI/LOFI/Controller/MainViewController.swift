@@ -15,14 +15,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bluetoothContainer: UIView!
     @IBOutlet weak var rotationContainer: UIView!
     @IBOutlet weak var microphoneContainer: UIView!
+    @IBOutlet weak var terminalContainer: UIView!
     
     @IBOutlet weak var menuView: UIImageView!
     
+    @IBOutlet weak var infoBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
     var bluetoothVC:BluetoothScanViewController?
     var rotaionVC:RotationViewController?
     var microVC:MicrophoneViewController?
+    
+    
     
     var items = ["GAMEPAD","ROTAION","MICROPHONE","REMOTE"]
 
@@ -47,6 +51,7 @@ class MainViewController: UIViewController {
         touchPadContainer.isHidden = true
         rotationContainer.isHidden = true
         microphoneContainer.isHidden = true
+        terminalContainer.isHidden = true
         
         self.rotaionVC?.stopMotion()
         self.microVC?.stopSpeaking()
@@ -59,19 +64,19 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func inforAction(_ sender: Any) {
-        let settingVc = SettingViewController(nibName: "SettingViewController", bundle: nil)
-        var frameVC = CGRect(x: -self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        settingVc.view.frame = frameVC
-        self.addChildViewController(settingVc)
-        self.view.addSubview(settingVc.view)
-        
-        frameVC.origin.x = 0
-        
-        UIView.animate(withDuration: 0.3) {
+        if touchPadContainer.isHidden == false{
+            let settingVc = SettingViewController(nibName: "SettingViewController", bundle: nil)
+            var frameVC = CGRect(x: -self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
             settingVc.view.frame = frameVC
+            self.addChildViewController(settingVc)
+            self.view.addSubview(settingVc.view)
+            
+            frameVC.origin.x = 0
+            
+            UIView.animate(withDuration: 0.3) {
+                settingVc.view.frame = frameVC
+            }
         }
-        
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -99,6 +104,7 @@ class MainViewController: UIViewController {
         touchPadContainer.isHidden = true
         rotationContainer.isHidden = true
         microphoneContainer.isHidden = true
+        terminalContainer.isHidden = true
         BluetoothService.shareInstance.scanBluetooth()
         self.rotaionVC?.stopMotion()
         self.microVC?.stopSpeaking()
@@ -113,6 +119,7 @@ extension MainViewController:BluetoothCentralDelegate{
         self.bluetoothContainer.isHidden = true
         self.rotationContainer.isHidden = true
         self.microphoneContainer.isHidden = true
+        self.terminalContainer.isHidden = true
     }
 
 }
@@ -141,26 +148,38 @@ extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource
     func didTapItem(index:Int) {
         switch index {
         case 0:
+            self.infoBtn.setImage(#imageLiteral(resourceName: "setting"), for: .normal)
             self.touchPadContainer.isHidden = false
             self.bluetoothContainer.isHidden = true
             self.rotationContainer.isHidden = true
             self.microphoneContainer.isHidden = true
+            self.terminalContainer.isHidden = true
             break
         case 1:
+            self.infoBtn.setImage(#imageLiteral(resourceName: "infor"), for: .normal)
             self.touchPadContainer.isHidden = true
             self.bluetoothContainer.isHidden = true
             self.rotationContainer.isHidden = false
             self.microphoneContainer.isHidden = true
+            self.terminalContainer.isHidden = true
             self.rotaionVC?.startMotionDetect()
             break
         case 2:
+            self.infoBtn.setImage(#imageLiteral(resourceName: "infor"), for: .normal)
             self.touchPadContainer.isHidden = true
             self.bluetoothContainer.isHidden = true
             self.rotationContainer.isHidden = true
             self.microphoneContainer.isHidden = false
+            self.terminalContainer.isHidden = true
             self.microVC?.startSpeaking()
             break
         case 3:
+            self.infoBtn.setImage(#imageLiteral(resourceName: "infor"), for: .normal)
+            self.touchPadContainer.isHidden = true
+            self.bluetoothContainer.isHidden = true
+            self.rotationContainer.isHidden = true
+            self.microphoneContainer.isHidden = true
+            self.terminalContainer.isHidden = false
             break
         default:
             break

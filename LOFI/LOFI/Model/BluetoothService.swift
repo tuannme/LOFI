@@ -56,6 +56,12 @@ class BluetoothService: NSObject {
         }
     }
     
+    func sendMessage(message:String) {
+        guard let peripheral = mPeripheral else{return}
+        guard let characteristic = mCharacteristics?.last else{return}
+        self.sendData(message: message, peripheral: peripheral, characteristic: characteristic)
+    }
+    
     func sendDirection(direction:Direction)  {
         
         if let message = Utils.directionToString(direction: direction){

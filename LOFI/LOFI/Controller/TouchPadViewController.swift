@@ -26,16 +26,32 @@ class TouchPadViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         squareBtn.tapAction = {
-            
+            var message = "S"
+            if let customValue = UserDefaults.standard.object(forKey: SQUARE) as? String {
+                message = customValue
+            }
+            BluetoothService.shareInstance.sendMessage(message: message)
         }
         triangleBtn.tapAction = {
-            
+            var message = "T"
+            if let customValue = UserDefaults.standard.object(forKey: TRIANGLE) as? String {
+                message = customValue
+            }
+            BluetoothService.shareInstance.sendMessage(message: message)
         }
         xBtn.tapAction = {
-            
+            var message = "X"
+            if let customValue = UserDefaults.standard.object(forKey: X) as? String {
+                message = customValue
+            }
+            BluetoothService.shareInstance.sendMessage(message: message)
         }
         oBtn.tapAction = {
-            
+            var message = "O"
+            if let customValue = UserDefaults.standard.object(forKey: O) as? String {
+                message = customValue
+            }
+            BluetoothService.shareInstance.sendMessage(message: message)
         }
     }
     

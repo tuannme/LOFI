@@ -13,15 +13,16 @@ import Speech
 class MicrophoneViewController: UIViewController {
 
     @IBOutlet weak var speedResultLb: UILabel!
-    
     @IBOutlet weak var circleView: UIView!
-    
     
     var speechRecognizer:SFSpeechRecognizer?
     var recognitionRequest:SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask:SFSpeechRecognitionTask?
     var audioEngine:AVAudioEngine?
     let language = "vi"
+    
+    var timer:Timer?
+    var lastTime:Date?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,15 @@ class MicrophoneViewController: UIViewController {
     
     func startSpeaking() {
         
+        timer?.invalidate()
+        timer = nil
+        lastTime = nil
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.checkSpeakTimeout), userInfo: nil, repeats: true)
+        
+        self.speedResultLb.text = ""
+        self.playanimation()
+        
         guard let speechRecognizer = speechRecognizer else{return}
         if recognitionTask != nil{
             recognitionTask?.cancel()
@@ -71,21 +81,22 @@ class MicrophoneViewController: UIViewController {
         audioEngine = AVAudioEngine()
         
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest, resultHandler: { (speedResult, error) in
-            
-            if let transcription = speedResult?.transcriptions{
-                print(transcription.count)
+            /*
+            var results = ""
+            guard let transcriptions = speedResult?.transcriptions else{return}
+            for result in transcriptions{
+                results =  results + result.formattedString
             }
+            DispatchQueue.main.async {
+                self.speedResultLb.text = results
+            }
+           */
             
             if let bestTranscription = speedResult?.bestTranscription{
                 DispatchQueue.main.async {
+                    self.lastTime = Date()
                     self.speedResultLb.text = bestTranscription.formattedString
-                    
-                    self.audioEngine?.stop()
-                    self.audioEngine = nil
-                    self.recognitionRequest = nil
-                    self.recognitionTask = nil
-                    self.startSpeaking()
-                    
+                    self.circleView.layer.removeAllAnimations()
                 }
             }
             
@@ -106,13 +117,25 @@ class MicrophoneViewController: UIViewController {
             print("audioEngine start error \(error)")
         }
         
-         drawCircle()
     }
     
+    @objc func checkSpeakTimeout() {
+        let now = Date()
+        if let lastTime = lastTime{
+            if now.timeIntervalSince(lastTime) > 2 {
+                recognitionTask?.cancel()
+                recognitionTask = nil
+                self.startSpeaking()
+            }
+        }
+        
+    }
     
+
     func stopSpeaking(){
         recognitionTask?.cancel()
         recognitionTask = nil
+        circleView.layer.removeAllAnimations()
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,7 +143,7 @@ class MicrophoneViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func drawCircle(){
+    func playanimation(){
         
         circleView.clipsToBounds = true
         circleView.layer.borderColor = UIColor.orange.cgColor
@@ -145,7 +168,6 @@ class MicrophoneViewController: UIViewController {
         theGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
         
         circleView.layer.add(theGroup, forKey: "theGroup")
-        
     }
     
 }
