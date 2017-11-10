@@ -27,9 +27,11 @@ class MainViewController: UIViewController {
     var microVC:MicrophoneViewController?
     var terminalVC:TerminalViewController?
     
+    var date1:Date!
     
     var items = ["GAMEPAD","ROTAION","MICROPHONE","REMOTE"]
-
+    var itemsTitle = ["Gamepad","Rotation","Voice control","Terminal"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,8 @@ class MainViewController: UIViewController {
         BluetoothService.shareInstance.bluetoothCentralDelegate = self
         
     }
+
+    
     @objc func didTapLofi() {
         UIView.animate(withDuration: 0.1, animations: {
             self.menuView.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
@@ -136,8 +140,9 @@ extension MainViewController:UICollectionViewDelegate,UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let itemCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        let item  = items[indexPath.row]
-        itemCell.setUp(item: item)
+        let item  = itemsTitle[indexPath.row]
+        let image = items[indexPath.row]
+        itemCell.setUp(item: item, imageName: image)
         
         itemCell.itemView.tapAction = {
             self.didTapItem(index: indexPath.row)

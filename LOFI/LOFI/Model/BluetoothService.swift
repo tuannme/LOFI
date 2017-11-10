@@ -57,6 +57,7 @@ class BluetoothService: NSObject {
     }
     
     func sendMessage(message:String) {
+        print("will send message : \(message)")
         guard let peripheral = mPeripheral else{return}
         guard let characteristic = mCharacteristics?.last else{return}
         self.sendData(message: message, peripheral: peripheral, characteristic: characteristic)
@@ -65,7 +66,7 @@ class BluetoothService: NSObject {
     func sendDirection(direction:Direction)  {
         
         if let message = Utils.directionToString(direction: direction){
-            
+            print("will send message : \(message)")
             guard let peripheral = mPeripheral else{return}
             guard let characteristic = mCharacteristics?.last else{return}
             
@@ -75,7 +76,6 @@ class BluetoothService: NSObject {
     
     func sendData(message:String,peripheral:CBPeripheral,characteristic:CBCharacteristic){
         if let messageData = message.data(using: .utf8){
-            print("will send message : \(message)")
             peripheral.writeValue(messageData, for: characteristic, type: .withoutResponse)
         }
     }

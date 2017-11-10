@@ -21,6 +21,7 @@ class TouchPadViewController: UIViewController {
     var isMove = false
     var privot = Date()
     var prevLocation:CGPoint!
+    var recentDir:Direction = .NON
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +97,7 @@ extension TouchPadViewController{
             let center = CGPoint(x: centerX, y: centerY)
             
             /*send data every 1s*/
-            
+            /*
             let now = Date()
             if now.timeIntervalSince(self.privot) >= 1{
                 self.privot = now
@@ -106,15 +107,28 @@ extension TouchPadViewController{
                 }
                 self.prevLocation = center
             }
-            //self.prevLocation = center
+            */
             
-            /* send data when move > 10 unit
+            /* send data when move > 10 unit*/
             let direction = Utils.getDirectionBasic(prevLocation: prevLocation, currentLocation: center)
             if direction != .NON{
-                prevLocation = center
-                BluetoothService.shareInstance.sendDirection(direction: direction)
+                if direction == self.recentDir{
+                    if Date().timeIntervalSince(self.privot) >= 1{
+                        self.privot = Date()
+                        self.recentDir = direction
+                        prevLocation = center
+                        BluetoothService.shareInstance.sendDirection(direction: direction)
+
+                    }
+                }else{
+                    print("___")
+                    self.privot = Date()
+                    self.recentDir = direction
+                    prevLocation = center
+                    BluetoothService.shareInstance.sendDirection(direction: direction)
+                }
             }
-            */
+          
             UIView.animate(withDuration: 0.0, delay: 0.0, options: .curveEaseOut, animations: {
                 self.touchPad.center = center
             }, completion: { (done) in

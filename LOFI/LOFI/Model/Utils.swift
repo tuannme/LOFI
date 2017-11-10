@@ -101,7 +101,7 @@ class Utils{
     
     static func getDirectionBasic(prevLocation:CGPoint,currentLocation:CGPoint) -> Direction{
         
-        if abs(prevLocation.x - currentLocation.x) > 10 || abs(prevLocation.y - currentLocation.y) > 10{
+        if abs(prevLocation.x - currentLocation.x) > 20 || abs(prevLocation.y - currentLocation.y) > 20{
             
             if prevLocation.x > currentLocation.x && prevLocation.y > currentLocation.y {
                 

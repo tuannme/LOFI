@@ -12,8 +12,8 @@ class ItemCell: UICollectionViewCell {
     
     @IBOutlet weak var itemView: MenuItem!
     
-    func setUp(item:String){
+    func setUp(item:String,imageName:String){
        itemView.title = item
-       itemView.image = UIImage(named: item)
+       itemView.image = UIImage(named: imageName)
     }
 }
