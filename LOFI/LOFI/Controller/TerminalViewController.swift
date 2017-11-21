@@ -16,6 +16,8 @@ class TerminalViewController: UIViewController {
     @IBOutlet weak var sendBnt: UIButton!
     var arrTerminals:[String] = []
     
+    @IBOutlet weak var topSpaceConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +26,10 @@ class TerminalViewController: UIViewController {
         
         inputTextField.layer.borderWidth = 2
         inputTextField.layer.borderColor = UIColor.orange.cgColor
+        
+        if UIDevice().screenType == .iPhones_5_5s_5c_SE{
+            topSpaceConstraint.constant = 100
+        }
         
     }
     func resetData() {
@@ -44,8 +50,8 @@ class TerminalViewController: UIViewController {
         guard let message = inputTextField.text else{return}
         if message.count > 0 {
             BluetoothService.shareInstance.sendMessage(message: message)
-            arrTerminals.append(message)
-            tbView.reloadData()
+            //arrTerminals.append(message)
+            //tbView.reloadData()
             inputTextField.text = ""
         }
     }

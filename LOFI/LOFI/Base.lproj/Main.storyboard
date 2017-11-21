@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J8n-TL-Hp5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J8n-TL-Hp5">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="D9L-XI-hcY">
-                                <rect key="frame" x="0.0" y="165" width="667" height="180"/>
+                                <rect key="frame" x="0.0" y="185" width="667" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="fSF-2n-aGN"/>
@@ -140,7 +140,7 @@
                             <constraint firstItem="IMg-RM-U7V" firstAttribute="leading" secondItem="cjH-k2-8mK" secondAttribute="leading" id="FAy-5Z-gfl"/>
                             <constraint firstAttribute="trailing" secondItem="wA8-W2-dQQ" secondAttribute="trailing" id="GEK-t2-e3z"/>
                             <constraint firstItem="IMg-RM-U7V" firstAttribute="top" secondItem="cjH-k2-8mK" secondAttribute="top" id="Lba-y9-T42"/>
-                            <constraint firstItem="cjH-k2-8mK" firstAttribute="bottom" secondItem="D9L-XI-hcY" secondAttribute="bottom" constant="30" id="NyU-qp-qF8"/>
+                            <constraint firstItem="cjH-k2-8mK" firstAttribute="bottom" secondItem="D9L-XI-hcY" secondAttribute="bottom" constant="10" id="NyU-qp-qF8"/>
                             <constraint firstItem="n3a-rS-ZWv" firstAttribute="top" secondItem="jVC-Xs-LPr" secondAttribute="top" id="O2d-gq-ANd"/>
                             <constraint firstItem="cjH-k2-8mK" firstAttribute="trailing" secondItem="6iG-55-48M" secondAttribute="trailing" constant="20" id="O6X-Xn-RKn"/>
                             <constraint firstItem="cjH-k2-8mK" firstAttribute="bottom" secondItem="n3a-rS-ZWv" secondAttribute="bottom" id="Ptx-1j-0g3"/>
@@ -173,6 +173,7 @@
                         <outlet property="bluetoothContainer" destination="n3a-rS-ZWv" id="A7u-hJ-6s8"/>
                         <outlet property="collectionView" destination="D9L-XI-hcY" id="GSd-gV-SfP"/>
                         <outlet property="infoBtn" destination="m8V-Gb-n5O" id="u5p-mw-sFB"/>
+                        <outlet property="logoImv" destination="vJ6-Wi-U6S" id="oWF-bW-xZZ"/>
                         <outlet property="menuView" destination="aER-fc-6lm" id="egg-VQ-a24"/>
                         <outlet property="microphoneContainer" destination="boS-XP-wmf" id="kyc-ow-SPc"/>
                         <outlet property="rotationContainer" destination="wA8-W2-dQQ" id="hWJ-iv-gnU"/>
@@ -360,10 +361,10 @@ Robots</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5If-tt-oWa">
-                                <rect key="frame" x="223.5" y="135" width="220" height="220"/>
+                                <rect key="frame" x="233.5" y="155" width="200" height="200"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ROTAION" translatesAutoresizingMaskIntoConstraints="NO" id="RhA-J4-vMq">
-                                        <rect key="frame" x="80" y="80" width="60" height="60"/>
+                                        <rect key="frame" x="70" y="70" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="0XH-4f-hDJ"/>
                                             <constraint firstAttribute="width" secondItem="RhA-J4-vMq" secondAttribute="height" multiplier="1:1" id="yHj-8C-tWR"/>
@@ -374,7 +375,7 @@ Robots</string>
                                 <constraints>
                                     <constraint firstItem="RhA-J4-vMq" firstAttribute="centerX" secondItem="5If-tt-oWa" secondAttribute="centerX" id="ELe-Lt-Fpa"/>
                                     <constraint firstItem="RhA-J4-vMq" firstAttribute="centerY" secondItem="5If-tt-oWa" secondAttribute="centerY" id="TZ3-yq-YWV"/>
-                                    <constraint firstAttribute="width" constant="220" id="bi7-Hj-TeJ"/>
+                                    <constraint firstAttribute="width" constant="200" id="bi7-Hj-TeJ"/>
                                     <constraint firstAttribute="width" secondItem="5If-tt-oWa" secondAttribute="height" id="bpq-ob-5UL"/>
                                 </constraints>
                             </view>
@@ -543,11 +544,13 @@ Robots</string>
                             <constraint firstAttribute="trailing" secondItem="vtz-Ly-Hkr" secondAttribute="trailing" constant="50" id="ZYs-zU-Sfr"/>
                             <constraint firstItem="jfK-cW-RwC" firstAttribute="leading" secondItem="vtz-Ly-Hkr" secondAttribute="leading" constant="20" id="cFI-Yp-QnG"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="op1-RR-cj4"/>
                     </view>
                     <connections>
                         <outlet property="inputTextField" destination="8M4-b5-cbE" id="op4-Fi-LCN"/>
                         <outlet property="sendBnt" destination="cJq-Ae-klK" id="jS0-NQ-FMD"/>
                         <outlet property="tbView" destination="vtz-Ly-Hkr" id="5Rf-5Z-LTS"/>
+                        <outlet property="topSpaceConstraint" destination="WCH-50-8qw" id="BE5-73-eNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tht-Ky-fOg" userLabel="First Responder" sceneMemberID="firstResponder"/>

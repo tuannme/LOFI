@@ -75,7 +75,7 @@ extension TouchPadViewController{
             isMove = true
             
             UIView.animate(withDuration: 0.2, animations: {
-                self.touchPad.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                //self.touchPad.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
             }) { (done) in
                 
             }
@@ -86,7 +86,7 @@ extension TouchPadViewController{
         
         guard let touch = touches.first?.location(in: touchPadContainer) else{return}
         
-        let offset = touchPad.frame.size.width/2
+        let offset:CGFloat = 0 //touchPad.frame.size.width/2
         
         if isMove {
             
@@ -144,7 +144,7 @@ extension TouchPadViewController{
         let center = CGPoint(x: maxSize/2, y: maxSize/2)
         UIView.animate(withDuration: 0.2, animations: {
             self.touchPad.center = center
-            self.touchPad.transform = CGAffineTransform(scaleX: 1, y: 1)
+            //self.touchPad.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (done) in
             
         }
