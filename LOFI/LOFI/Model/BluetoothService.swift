@@ -75,8 +75,15 @@ class BluetoothService: NSObject {
     }
     
     func sendData(message:String,peripheral:CBPeripheral,characteristic:CBCharacteristic){
-        if let messageData = message.data(using: .utf8){
-            peripheral.writeValue(messageData, for: characteristic, type: .withoutResponse)
+
+        if let messageData = message.data(using: .utf8),let deviceName = peripheral.name{
+            
+            let base64Data = messageData.base64EncodedData(options: .init(rawValue: 0))
+            let base64String = NSString(data: base64Data, encoding: .init(0))!
+            let encryptStr = Utils.encryptDecrypt(input: base64String, staticKey: deviceName as NSString)
+            if let encryptData = encryptStr?.data(using: 0){
+                peripheral.writeValue(encryptData, for: characteristic, type: .withoutResponse)
+            }
         }
     }
     
@@ -136,7 +143,6 @@ extension BluetoothService:CBPeripheralDelegate{
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
-        
         
         if service.uuid.isEqual(CBUUID(string: BLEService)){
             guard let characteristics = service.characteristics else{return}
@@ -242,3 +248,5 @@ extension BluetoothService:CBPeripheralDelegate{
     
     
 }
+
+

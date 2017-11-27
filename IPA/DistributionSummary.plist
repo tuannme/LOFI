@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LOFI.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>B60A069E00169050BC6F53B03CF384A57B4D9F2C</string>
+				<key>dateExpires</key>
+				<string>11/1/18</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>B60A069E00169050BC6F53B03CF384A57B4D9F2C</string>
+						<key>dateExpires</key>
+						<string>11/1/18</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>IQKeyboardManagerSwift.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>USQFGC88U6</string>
+						<key>name</key>
+						<string>TRAMS</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>USQFGC88U6.com.trams.clover</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>USQFGC88U6</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>USQFGC88U6.com.trams.clover</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>LOFI.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>c9bf34e6-e409-4b23-affe-ae77694ac54d</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: *</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>USQFGC88U6</string>
+				<key>name</key>
+				<string>TRAMS</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

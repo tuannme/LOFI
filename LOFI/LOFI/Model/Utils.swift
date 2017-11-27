@@ -273,4 +273,12 @@ class Utils{
         return .NON
     }
     
+    static func encryptDecrypt(input: NSString, staticKey: NSString) -> NSString? {
+        let chars = (0..<input.length).map({
+            input.character(at: $0) ^ staticKey.character(at: $0 % staticKey.length)
+        })
+        return NSString(characters: chars, length: chars.count)
+    }
 }
+
+
