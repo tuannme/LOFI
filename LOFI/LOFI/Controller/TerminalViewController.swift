@@ -11,12 +11,15 @@ import UIKit
 class TerminalViewController: UIViewController {
 
     
+    
     @IBOutlet weak var tbView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var sendBnt: UIButton!
     var arrTerminals:[String] = []
     
     @IBOutlet weak var topSpaceConstraint: NSLayoutConstraint!
+    @IBOutlet weak var inputViewHeightConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +29,15 @@ class TerminalViewController: UIViewController {
         
         inputTextField.layer.borderWidth = 2
         inputTextField.layer.borderColor = UIColor.orange.cgColor
+        inputTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 30))
+        inputTextField.leftViewMode = .always
         
         if UIDevice().screenType == .iPhones_5_5s_5c_SE{
-            topSpaceConstraint.constant = 100
+            topSpaceConstraint.constant = 75
+            inputViewHeightConstraint.constant = 28
         }
+        
+        BluetoothService.shareInstance.bluetoothDatadelegate = self
         
     }
     func resetData() {
@@ -50,17 +58,28 @@ class TerminalViewController: UIViewController {
         guard let message = inputTextField.text else{return}
         if message.count > 0 {
             BluetoothService.shareInstance.sendMessage(message: message)
-            //arrTerminals.append(message)
-            //tbView.reloadData()
             inputTextField.text = ""
         }
     }
 
 }
 
+extension TerminalViewController:BluetoothDataDelegate{
+    func didReceiveData(data: String) {
+        arrTerminals.insert(data, at: 0)
+        tbView.reloadData()
+    }
+}
+
+
+
 extension TerminalViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if UIDevice().screenType == .iPhones_5_5s_5c_SE{
+            return 40
+        }
         return 60
     }
     
@@ -83,7 +102,10 @@ extension TerminalViewController:UITableViewDelegate,UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        if UIDevice().screenType == .iPhones_5_5s_5c_SE{
+            return 20
+        }
+        return 30
     }
     
 }

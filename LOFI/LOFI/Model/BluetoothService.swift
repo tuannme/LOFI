@@ -17,6 +17,10 @@ protocol BluetoothPeripheralDelegate:class {
     func didDiscoveryPeripheral()
 }
 
+protocol BluetoothDataDelegate:class{
+    func didReceiveData(data:String)
+}
+
 class BluetoothService: NSObject {
 
     static let shareInstance:BluetoothService = {
@@ -34,6 +38,7 @@ class BluetoothService: NSObject {
     
     weak var bluetoothCentralDelegate:BluetoothCentralDelegate?
     weak var bluetoothPeripheralDelegate:BluetoothPeripheralDelegate?
+    weak var bluetoothDatadelegate:BluetoothDataDelegate?
     
     var manager:CBCentralManager!
     var peripherals:[CBPeripheral] = []
@@ -165,8 +170,9 @@ extension BluetoothService:CBPeripheralDelegate{
         
         switch characteristic.uuid {
         case CBUUID(string: BLECharacteristic):/* Data received */
-            let data = String(data: value, encoding: String.Encoding.utf8)
             
+            guard let data = String(data: value, encoding: String.Encoding.utf8) else{return}
+            /*
             var peripheralName = ""
             
             if let name = peripheral.name{
@@ -174,11 +180,9 @@ extension BluetoothService:CBPeripheralDelegate{
             }else{
                 peripheralName = peripheral.identifier.uuidString
             }
+            */
+            self.bluetoothDatadelegate?.didReceiveData(data: data)
             
-
-            let alert = UIAlertView(title: "message from \(peripheralName)", message: data, delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
- 
            /*
             let alertVC = UIAlertController(title: "message from \(peripheralName)", message: data, preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "Done", style: .default, handler: nil))

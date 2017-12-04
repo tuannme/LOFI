@@ -160,13 +160,12 @@ class MainViewController: UIViewController {
 extension MainViewController:BluetoothCentralDelegate{
 
     func didConnect() {
-        self.touchPadContainer.isHidden = false
+        self.touchPadContainer.isHidden = true
         self.bluetoothContainer.isHidden = true
         self.rotationContainer.isHidden = true
         self.microphoneContainer.isHidden = true
         self.terminalContainer.isHidden = true
     }
-
 }
 
 @available(iOS 10.0, *)
